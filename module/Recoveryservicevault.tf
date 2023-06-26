@@ -17,7 +17,7 @@ resource "azurerm_recovery_services_vault" "example" {
 resource "azurerm_recovery_services_protection_policy" "example" {
   name                = "backup-policy"
   resource_group_name = azurerm_resource_group.example.name
-  vault_name          = azurerm_recovery_services_vault.example.name
+ # vault_name          = azurerm_recovery_services_vault.example.name
 
   backup {
     frequency        = "Daily"
