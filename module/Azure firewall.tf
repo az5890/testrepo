@@ -42,6 +42,6 @@ output "bastion_hostname" {
 }
 
 output "bastion_public_ip" {
-  value       = azurerm_bastion_host.example.ip_configuration.0.public_ip_address
+  value       = azurerm_bastion_host.example.ip_configuration[0].public_ip_address
   description = "Public IP address of the Azure Bastion"
 }
