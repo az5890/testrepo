@@ -32,8 +32,9 @@ resource "azurerm_bastion_host" "example" {
   name                = "my-bastion"
   resource_group_name = azurerm_resource_group.example.name
   location            = azurerm_resource_group.example.location
-# subnet_id          = azurerm_subnet.example.id
+  subnet_id           = azurerm_subnet.example.id
 # public_ip_address_id = azurerm_public_ip.example.id
+
 ip_configuration {
     name      = "ipconfig1"
     subnet_id = azurerm_subnet.example.id
@@ -46,7 +47,7 @@ output "bastion_hostname" {
   description = "Hostname of the Azure Bastion"
 }
 
-# output "bastion_public_ip" {
-#   value       = azurerm_bastion_host.example.ip_configuration[0].public_ip_address
-#   description = "Public IP address of the Azure Bastion"
-# }
+output "bastion_public_ip" {
+  value       = azurerm_bastion_host.example.ip_configuration[0].public_ip_address
+  description = "Public IP address of the Azure Bastion"
+}
