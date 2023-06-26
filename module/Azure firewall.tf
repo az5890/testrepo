@@ -42,12 +42,12 @@ ip_configuration {
   }
 }
 
-output "bastion_hostname" {
-  value       = azurerm_bastion_host.example.dns_name
-  description = "Hostname of the Azure Bastion"
-}
+# output "bastion_hostname" {
+#   value       = azurerm_bastion_host.example.dns_name
+#   description = "Hostname of the Azure Bastion"
+# }
 
-output "bastion_public_ip" {
-  value       = azurerm_bastion_host.example.ip_configuration[0].public_ip_address
-  description = "Public IP address of the Azure Bastion"
-}
+# output "bastion_public_ip" {
+#   value       = azurerm_bastion_host.example.ip_configuration[0].public_ip_address
+#   description = "Public IP address of the Azure Bastion"
+# }
