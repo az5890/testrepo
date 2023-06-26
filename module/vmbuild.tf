@@ -17,7 +17,7 @@
 
 # Define the resource group
 resource "azurerm_resource_group" "example" {
-  name     = "RG002"
+  name     = var.vm_resource_group
   location = "East US"
 }
 
