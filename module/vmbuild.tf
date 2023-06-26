@@ -1,18 +1,18 @@
-terraform {
-  required_providers {
-    azurerm = {
-      source = "hashicorp/azurerm"
-      version = "3.61.0"
-    }
-  }
-}
+# terraform {
+#   required_providers {
+#     azurerm = {
+#       source = "hashicorp/azurerm"
+#       version = "3.61.0"
+#     }
+#   }
+# }
 
-provider "azurerm" {
-  # Configuration options
-  features {
+# provider "azurerm" {
+#   # Configuration options
+#   features {
   
-  }
-}
+#   }
+# }
 
 
 # Define the resource group
