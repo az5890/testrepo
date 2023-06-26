@@ -29,6 +29,7 @@ resource "azurerm_firewall" "example" {
   name                = "my-firewall"
   resource_group_name = azurerm_resource_group.example.name
   location            = azurerm_resource_group.example.location
+   sku_tier            = "Standard" 
   ip_configurations   = [{
     name                          = "my-firewall-ip-config"
     subnet_id                     = azurerm_subnet.example.id
