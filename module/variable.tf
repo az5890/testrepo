@@ -37,6 +37,10 @@ variable "db_name" {
     default = "Test1"
     description = "value" 
 }
+variable "recovery_vault_service" {  
+    default = "Test1"
+    description = "value" 
+}
 
 
 

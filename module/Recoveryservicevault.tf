@@ -1,12 +1,12 @@
 # Create a resource group
-resource "azurerm_resource_group" "example" {
-  name     = "recovery-vault-rg1"
-  location = "East US"
-}
+# resource "azurerm_resource_group" "example" {
+#   name     = "recovery-vault-rg1"
+#   location = "East US"
+# }
 
 # Create the Recovery Services Vault
 resource "azurerm_recovery_services_vault" "example" {
-  name                = "tfex-recovery-vault"
+  name                = var.recovery_vault_service
   resource_group_name = azurerm_resource_group.example.name
   location            = azurerm_resource_group.example.location
   sku                 = "Standard"  # Replace with desired SKU
