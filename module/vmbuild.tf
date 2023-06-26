@@ -18,12 +18,12 @@
 # Define the resource group
 resource "azurerm_resource_group" "example" {
   name     = var.vm_resource_group
-  location = "East US"
+  location = "West US"
 }
 
 # Define the virtual network
 resource "azurerm_virtual_network" "example" {
-  name                = "my-vnet"
+  name                = var.vnet
   address_space       = ["10.0.0.0/16"]
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
@@ -31,7 +31,7 @@ resource "azurerm_virtual_network" "example" {
 
 # Define the subnet
 resource "azurerm_subnet" "example" {
-  name                 = "my-subnet"
+  name                 = var.subnet
   resource_group_name  = azurerm_resource_group.example.name
   virtual_network_name = azurerm_virtual_network.example.name
   address_prefixes     = ["10.0.1.0/24"]
@@ -46,14 +46,14 @@ resource "azurerm_subnet" "example" {
 
 # Define the network security group
 resource "azurerm_network_security_group" "example" {
-  name                = "my-nsg"
+  name                = var.nsg
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
 }
 
 # Define the security rule to allow SSH
 resource "azurerm_network_security_rule" "example" {
-  name                        = "allow-ssh"
+  name                        = var.nsg_rule
   priority                    = 100
   direction                   = "Inbound"
   access                      = "Allow"
