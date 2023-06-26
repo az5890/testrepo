@@ -57,3 +57,7 @@ variable "public_ip" {
     default = "Test"
     description = "value" 
 }
+# variable "azure_bastion_host" {  
+#     default = "Test"
+#     description = "value" 
+# }
