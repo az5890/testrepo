@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "example" {
-  name     = "RG1"
+  name     = "my-resource-group"
   location = "East US"
 }
 
@@ -17,7 +17,6 @@ resource "azurerm_subnet" "example" {
   address_prefixes     = ["10.0.0.0/24"]
 }
 
-
 resource "azurerm_public_ip" "example" {
   name                = "my-public-ip"
   location            = azurerm_resource_group.example.location
@@ -29,8 +28,9 @@ resource "azurerm_firewall" "example" {
   name                = "my-firewall"
   resource_group_name = azurerm_resource_group.example.name
   location            = azurerm_resource_group.example.location
-   sku_tier            = "Standard" 
+  sku_tier            = "Standard"
 }
+
 resource "azurerm_firewall_application_rule_collection" "example" {
   name                = "my-application-rule-collection"
   resource_group_name = azurerm_resource_group.example.name
