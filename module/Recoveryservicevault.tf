@@ -27,22 +27,20 @@ resource "azurerm_recovery_services_vault" "example" {
   sku                 = "Standard"
 }
 
-resource "azurerm_recovery_services_protection_policy_vm" "example" {
-  name                = "backup-policy"
-  resource_group_name = azurerm_resource_group.example.name
-  vault_name          = azurerm_recovery_services_vault.example.name
-
-  backup {
-    frequency        = "Daily"
-    retention_days   = 30
-    start_time       = "2023-06-26T00:00:00"
-    time_zone        = "UTC"
-  }
-}
 resource "azurerm_recovery_services_protected_vm" "example" {
   name                = "protected-vm"
   resource_group_name = azurerm_resource_group.example.name
   vault_name          = azurerm_recovery_services_vault.example.name
-  #source_vm_id        = "/subscriptions/75b7d327-76ca-4c19-a635-b6dc8ca1a365/resourceGroups/your-vm-rg/providers/Microsoft.Compute/virtualMachines/your-vm-name"
-  policy_id           = azurerm_recovery_services_protection_policy_vm.example.id
+  source_vm_id        = "/subscriptions/your-subscription-id/resourceGroups/your-vm-rg/providers/Microsoft.Compute/virtualMachines/your-vm-name"
+
+  backup_policy {
+    schedule_policy {
+      frequency_type = "Daily"
+      start_time     = "2023-06-26T00:00:00"
+      retention_daily {
+        count = 30
+      }
+    }
+  }
 }
+
