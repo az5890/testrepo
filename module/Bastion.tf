@@ -30,7 +30,7 @@ resource "azurerm_public_ip" "example" {
 }
 
 resource "azurerm_bastion_host" "example" {
-  name                = "Azure_Bastion_Host"
+  name                = "AzureBastionSubnet"
   resource_group_name = azurerm_resource_group.example.name
   location            = azurerm_resource_group.example.location
 #  subnet_id           = azurerm_subnet.example.id
