@@ -25,6 +25,7 @@ resource "azurerm_recovery_services_protection_policy_vm" "example" {
     start_time       = "02:00"
     time_zone        = "UTC"
   }
+}
 
 # Output the vault details
 output "vault_id" {
