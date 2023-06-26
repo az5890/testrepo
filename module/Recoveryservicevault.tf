@@ -26,7 +26,7 @@ resource "azurerm_backup_policy_vm" "example" {
     start_time       = "02:00"
     time_zone        = "UTC"
   }
-
+}
 
 # # Create the backup policy
 # resource "azurerm_recovery_services_protection_policy" "example" {
