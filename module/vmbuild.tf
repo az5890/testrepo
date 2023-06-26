@@ -18,7 +18,7 @@
 # Define the resource group
 resource "azurerm_resource_group" "example" {
   name     = var.vm_resource_group
-  location = "East US"
+  location = "West US"
 }
 
 # Define the virtual network
