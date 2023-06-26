@@ -22,9 +22,11 @@ resource "azurerm_backup_policy_vm" "example" {
 
   backup {
     frequency = "Daily"
-    retention_days   = 30
-    start_time       = "02:00"
-    time_zone        = "UTC"
+    time      = "23:00"
+  }
+
+  retention_daily {
+    count = 10
   }
 }
 
