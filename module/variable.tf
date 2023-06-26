@@ -24,7 +24,7 @@ variable "VM00" {
     default = "Test1"
     description = "value" 
 }
-variable "DBservername" {  
+variable "dbservername" {  
     default = "Test1"
     description = "value" 
 }
