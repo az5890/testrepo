@@ -44,7 +44,7 @@ ip_configuration {
 }
 
 output "bastion_hostname" {
-  value       = azurerm_bastion_host.example1.dns_name
+  value       = azurerm_bastion_host.example.dns_name
   description = "Hostname of the Azure Bastion"
 }
 
