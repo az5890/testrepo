@@ -24,6 +24,7 @@ resource "azurerm_recovery_services_vault" "example" {
   name                = "recovery-vault"
   resource_group_name = azurerm_resource_group.example.name
   location            = azurerm_resource_group.example.location
+  sku                 = "Standard"
 }
 
 resource "azurerm_recovery_services_protection_policy_vm" "example" {
