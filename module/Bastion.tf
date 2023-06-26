@@ -2,10 +2,10 @@
 # #   features {}
 # # }
 
-# # resource "azurerm_resource_group" "example" {
-# #   name     = "RG1"
-# #   location = "East US"
-# # }
+resource "azurerm_resource_group" "example" {
+  name     = "RG1"
+  location = "East US"
+}
 
 resource "azurerm_virtual_network" "example" {
   name                = var.vnet1
@@ -15,7 +15,7 @@ resource "azurerm_virtual_network" "example" {
 }
 
 resource "azurerm_subnet" "example1" {
-  name                 = var.AzureBastionSubnet
+  name                 = AzureBastionSubnet
   resource_group_name  = azurerm_resource_group.example.name
   virtual_network_name = azurerm_virtual_network.example.name
   address_prefixes     = ["10.0.0.0/24"]
@@ -38,7 +38,7 @@ resource "azurerm_bastion_host" "example" {
 
 ip_configuration {
     name      = "ipconfig1"
-    subnet_id = azurerm_subnet.example1.id
+    subnet_id = azurerm_subnet.example.id
     public_ip_address_id = azurerm_public_ip.example.id
   }
 }
