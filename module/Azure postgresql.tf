@@ -1,6 +1,6 @@
 #Azure DB
 resource "azurerm_postgresql_server" "example" {
-  name                = "my-postgres-server03"
+  name                = var.DBservername
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
   sku_name            = "GP_Gen5_8"
@@ -18,7 +18,7 @@ locals {
 }
  
 resource "azurerm_postgresql_firewall_rule" "example" {
-  name                = "allow-client-ip"
+  name                = var.db_friewall_rule
   resource_group_name = azurerm_resource_group.example.name
   server_name         = azurerm_postgresql_server.example.name
   start_ip_address    = "10.0.0.0"
@@ -26,7 +26,7 @@ resource "azurerm_postgresql_firewall_rule" "example" {
 }
 
 resource "azurerm_postgresql_database" "example" {
-  name                = "my-database"
+  name                = var.db_name
   resource_group_name = azurerm_resource_group.example.name
   server_name         = azurerm_postgresql_server.example.name
   charset             = "UTF8"
