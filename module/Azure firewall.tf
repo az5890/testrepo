@@ -37,7 +37,7 @@ resource "azurerm_bastion_host" "example" {
 
 ip_configuration {
     name      = "ipconfig1"
-    subnet_id = azurerm_subnet.example.id
+    AzureBastionSubnet = azurerm_subnet.example.id
     public_ip_address_id = azurerm_public_ip.example.id
   }
 }
