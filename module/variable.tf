@@ -44,3 +44,16 @@ variable "recovery_vault_service" {
 
 
 
+# B
+variable "vnet1" {  
+    default = "Test1"
+    description = "value" 
+}
+variable "AzureBastionSubnet" {  
+    default = "Test1"
+    description = "value" 
+}
+variable "public_ip" {  
+    default = "Test1"
+    description = "value" 
+}

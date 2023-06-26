@@ -26,7 +26,7 @@ resource "azurerm_backup_policy_vm" "example" {
   }
 
   retention_daily {
-    count = 10
+    count = 30
   }
 }
 
