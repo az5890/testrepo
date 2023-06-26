@@ -65,7 +65,7 @@ resource "tls_private_key" "example_ssh" {
 # Define the virtual machine
 resource "azurerm_linux_virtual_machine" "example" {
   count                       = 3
-  name                        = "IN-PIS-P-VM00-${count.index}-AAC"
+  name                        = "IN-PIS-P-VM00${count.index}-AAC"
   location                    = azurerm_resource_group.example.location
   resource_group_name         = azurerm_resource_group.example.name
   size                        = "Standard_DS2_v2"
